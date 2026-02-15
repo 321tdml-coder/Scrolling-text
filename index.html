@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style>
+  body { background-color: black; color: white; font-family: -apple-system, sans-serif; margin: 0; padding: 10px; overflow: hidden; }
+  /* 下から上へ流れるアニメーション */
+  .scroll-text {
+    position: absolute;
+    width: 90%;
+    animation: scrollUp 20s linear infinite; /* 20sを変えると速度が変わります */
+  }
+  @keyframes scrollUp {
+    0% { transform: translateY(100vh); }
+    100% { transform: translateY(-100%); }
+  }
+</style>
+</head>
+<body>
+  <div class="scroll-text">
+    ここに300文字程度のテキストを入力してください。Apple Watchの画面でこのページを開くと、自動的に下から上へと文字が流れていきます。改行なども自由に入れて調整可能です。
+  </div>
+</body>
+</html>
