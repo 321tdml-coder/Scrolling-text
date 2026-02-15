@@ -8,41 +8,44 @@
     color: white; 
     font-family: -apple-system, sans-serif; 
     margin: 0; 
-    padding: 0 10px; /* 左右に少し余白を作る */
+    padding: 0 12px; 
     overflow: hidden; 
   }
 
   .scroll-text {
     position: absolute;
-    width: calc(100% - 20px); /* 画面幅いっぱいに広げる */
-    font-size: 22px; /* ★文字を大きく（Watchで読みやすいサイズ） */
-    font-weight: bold; /* ★文字を太くして視認性アップ */
-    line-height: 1.6; /* ★行間を広げて読みやすく */
-    animation: scrollUp 25s linear infinite; 
+    width: calc(100% - 24px);
+    font-size: 24px; /* 少しだけ大きくしました */
+    font-weight: bold;
+    letter-spacing: 0.1em; /* ★文字の間隔を広げました */
+    line-height: 1.5;
+    /* アニメーション時間を「60s」に伸ばして超低速化 */
+    animation: scrollUp 60s linear infinite; 
   }
 
-  /* 段落ごとの隙間を作る設定 */
+  /* 各アファメーションを画面いっぱいの高さに設定 */
   p {
-    margin-bottom: 1.5em; /* ★段落のあとに空白を入れる */
+    margin: 0;
+    display: flex;
+    align-items: center;
+    height: 100vh; /* ★1つの文章ごとに画面1枚分の高さを持たせる */
+    box-sizing: border-box;
+    padding-bottom: 20px; /* 微調整 */
   }
 
   @keyframes scrollUp {
-    0% { transform: translateY(100vh); }
-    100% { transform: translateY(-100%); }
+    0% { transform: translateY(0); }
+    100% { transform: translateY(-400vh); } /* 4つの段落分を上に飛ばす */
   }
 </style>
 </head>
 <body>
   <div class="scroll-text">
-    <p>朝のアファメーション（4つの宣言）</p>
-    
-    <p>1. 私は自分の運命の創造者です。</p>
-    
-    <p>2. 私のエネルギーが私の現実を作る。</p>
-    
-    <p>3. 私は今この瞬間において完全に満たされている存在です。</p>
-    
-    <p>4. 私は無限の可能性と繋がっている。</p>
+    <p>1. 私は自分の<br>運命の創造者です。</p>
+    <p>2. 私のエネルギーが<br>私の現実を作る。</p>
+    <p>3. 私は今この瞬間<br>完全に満たされている。</p>
+    <p>4. 私は無限の可能性と<br>繋がっている。</p>
   </div>
 </body>
 </html>
+
