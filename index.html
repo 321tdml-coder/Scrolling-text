@@ -1,15 +1,31 @@
 <!DOCTYPE html>
 <html>
 <head>
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 <style>
-  body { background-color: black; color: white; font-family: -apple-system, sans-serif; margin: 0; padding: 10px; overflow: hidden; }
-  /* 下から上へ流れるアニメーション */
+  body { 
+    background-color: black; 
+    color: white; 
+    font-family: -apple-system, sans-serif; 
+    margin: 0; 
+    padding: 0 10px; /* 左右に少し余白を作る */
+    overflow: hidden; 
+  }
+
   .scroll-text {
     position: absolute;
-    width: 90%;
-    animation: scrollUp 20s linear infinite; /* 20sを変えると速度が変わります */
+    width: calc(100% - 20px); /* 画面幅いっぱいに広げる */
+    font-size: 22px; /* ★文字を大きく（Watchで読みやすいサイズ） */
+    font-weight: bold; /* ★文字を太くして視認性アップ */
+    line-height: 1.6; /* ★行間を広げて読みやすく */
+    animation: scrollUp 25s linear infinite; 
   }
+
+  /* 段落ごとの隙間を作る設定 */
+  p {
+    margin-bottom: 1.5em; /* ★段落のあとに空白を入れる */
+  }
+
   @keyframes scrollUp {
     0% { transform: translateY(100vh); }
     100% { transform: translateY(-100%); }
@@ -18,17 +34,15 @@
 </head>
 <body>
   <div class="scroll-text">
-    朝のアファメーション（4つの宣言）
+    <p>朝のアファメーション（4つの宣言）</p>
     
-1．私は自分の運命の創造者です
-
-2．私のエネルギーが私の現実を作る
-
-3．私は今この瞬間において完全で満ちている存在です
-
-4．私は無限の可能性と繋がっている
+    <p>1. 私は自分の運命の創造者です。</p>
+    
+    <p>2. 私のエネルギーが私の現実を作る。</p>
+    
+    <p>3. 私は今この瞬間において完全に満たされている存在です。</p>
+    
+    <p>4. 私は無限の可能性と繋がっている。</p>
   </div>
 </body>
-
 </html>
-
